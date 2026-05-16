@@ -13,7 +13,7 @@ public class CardController {
     }
 
     @FXML
-    public Button bidScreen(ActionEvent event){
+    public void bidScreen(ActionEvent event){
 
     }
 }
