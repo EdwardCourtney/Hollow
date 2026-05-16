@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="620.0" prefWidth="960.0" spacing="22.0" style="-fx-background-color: #f3f4f6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+   <padding>
+      <Insets bottom="28.0" left="28.0" right="28.0" top="28.0" />
+   </padding>
+   <children>
+      <VBox spacing="8.0">
+         <children>
+            <Label style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #111827;" text="Welcome back" />
+            <Label style="-fx-text-fill: #4b5563; -fx-font-size: 15px;" text="This dashboard is the default screen after login or register." />
+         </children>
+      </VBox>
+      <HBox spacing="18.0">
+         <children>
+            <VBox prefHeight="170.0" prefWidth="280.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-color: #e5e7eb; -fx-border-radius: 16;">
+               <padding>
+                  <Insets bottom="22.0" left="22.0" right="22.0" top="22.0" />
+               </padding>
+               <children>
+                  <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Browse Auction" />
+                  <Label text="Open ongoing auctions and inspect their details before bidding." wrapText="true" />
+               </children>
+            </VBox>
+            <VBox prefHeight="170.0" prefWidth="280.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-color: #e5e7eb; -fx-border-radius: 16;">
+               <padding>
+                  <Insets bottom="22.0" left="22.0" right="22.0" top="22.0" />
+               </padding>
+               <children>
+                  <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="My Sales" />
+                  <Label text="Create your own auction posts here before wiring the real API." wrapText="true" />
+               </children>
+            </VBox>
+            <VBox prefHeight="170.0" prefWidth="280.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-color: #e5e7eb; -fx-border-radius: 16;">
+               <padding>
+                  <Insets bottom="22.0" left="22.0" right="22.0" top="22.0" />
+               </padding>
+               <children>
+                  <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Watchlist" />
+                  <Label text="Reserved for the last phase, but the menu route already exists." wrapText="true" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-color: #e5e7eb; -fx-border-radius: 16;">
+         <padding>
+            <Insets bottom="22.0" left="22.0" right="22.0" top="22.0" />
+         </padding>
+         <children>
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="UI Status" />
+            <Label text="Login and register already enter this main frame." />
+            <Label text="Browse Auction shows mock auction cards." />
+            <Label text="See Details opens the bid screen with local mock bidding." />
+            <Label text="My Sales provides a mock form for posting auctions." />
+         </children>
+      </VBox>
+   </children>
+</VBox>
