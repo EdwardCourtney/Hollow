@@ -20,16 +20,26 @@ public class LoginPage {
     @FXML public void back(ActionEvent event) throws IOException {
         SceneManager.changeScene(event, "/fxml/landingPage.fxml");
     }
-    @FXML public void submit(){
+    @FXML public void submit(ActionEvent event){
         authService.login(username.getText(), password.getText(), new AuthCallback() {
             @Override
             public void onSuccess(AuthResponse response) {
-                Platform.runLater(() -> System.out.println("Login success: " + response.message));
+                Platform.runLater(() -> {
+                    System.out.println("Login success: " + response.message);
+                            try {
+                                SceneManager.changeScene(event, "/fxml/framework.fxml");
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
+                );
             }
 
             @Override
             public void onError(String message) {
-                Platform.runLater(() -> System.out.println(message));
+                Platform.runLater(() -> {
+                    System.out.println(message);
+                });
             }
         });
     }
