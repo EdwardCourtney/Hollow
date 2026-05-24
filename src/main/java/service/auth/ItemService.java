@@ -1,7 +1,8 @@
-package service;
+package service.auth;
 
 import model.request.PublishItemRequest;
 import model.response.BaseItemResponse;
+import model.response.GetItemPageResponse;
 import network.ApiClient;
 import network.TokenStorage;
 import retrofit2.Call;
@@ -83,6 +84,25 @@ public class ItemService {
 
             @Override
             public void onFailure(Call<BaseItemResponse> call, Throwable throwable) {
+                callback.onError("Network error: " + throwable.getMessage());
+            }
+        });
+    }
+
+    public void getItems(int page, int size, ItemPageCallback callback) {
+        ApiClient.api.getItems(page, size).enqueue(new Callback<GetItemPageResponse>() {
+            @Override
+            public void onResponse(Call<GetItemPageResponse> call, Response<GetItemPageResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    callback.onSuccess(response.body());
+                    return;
+                }
+
+                callback.onError("Get items failed. HTTP code: " + response.code());
+            }
+
+            @Override
+            public void onFailure(Call<GetItemPageResponse> call, Throwable throwable) {
                 callback.onError("Network error: " + throwable.getMessage());
             }
         });

@@ -6,8 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import service.RegisterCallBack;
-import service.AuthService;
+import service.auth.RegisterCallBack;
+import service.auth.AuthService;
 
 import java.io.IOException;
 

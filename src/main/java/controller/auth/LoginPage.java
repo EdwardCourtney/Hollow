@@ -7,8 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import model.response.AuthResponse;
-import service.LoginCallback;
-import service.AuthService;
+import service.auth.LoginCallback;
+import service.auth.AuthService;
 
 import java.io.IOException;
 

@@ -5,8 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import model.response.BaseItemResponse;
-import service.ItemCallback;
-import service.ItemService;
+import service.auth.ItemCallback;
+import service.auth.ItemService;
 
 import java.io.IOException;
 

@@ -11,8 +11,8 @@ public class Framework {
     @FXML public void dashboard() throws IOException {
         SceneManager.changeContent("/fxml/dashboardTab.fxml");
     }
-    @FXML public void browse(){
-
+    @FXML public void browse() throws IOException {
+        SceneManager.changeContent("/fxml/browseTab.fxml");
     }
     @FXML public void mySale() throws IOException {
         SceneManager.changeContent("/fxml/mySaleTab.fxml");

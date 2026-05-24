@@ -1,4 +1,4 @@
-package service;
+package service.auth;
 
 public interface RegisterCallBack {
     void onSuccess(String message);
