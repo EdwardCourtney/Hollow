@@ -1,11 +1,13 @@
 package network;
 
 import model.request.LoginRequest;
+<<<<<<< HEAD
 import model.request.BidPostRequest;
 import model.request.PublishItemRequest;
+=======
+>>>>>>> parent of aff6f03 (feat: publish auction)
 import model.request.RegisterRequest;
 import model.response.AuthResponse;
-import model.response.BaseItemResponse;
 import model.response.BaseResponse;
 import model.response.BidPageResponse;
 import model.response.BidPostResponse;
@@ -14,9 +16,12 @@ import model.response.ItemPageObjectResponse;
 import model.response.ItemStatusGetResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
+<<<<<<< HEAD
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Path;
+=======
+>>>>>>> parent of aff6f03 (feat: publish auction)
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -26,6 +31,7 @@ public interface AuctionApi {
 
     @POST("/register")
     Call<BaseResponse> register(@Body RegisterRequest request);
+<<<<<<< HEAD
 
     @POST("/items")
     Call<BaseItemResponse> createItem(
@@ -71,4 +77,6 @@ public interface AuctionApi {
             @Query("page") int page,
             @Query("size") int size
     );
+=======
+>>>>>>> parent of aff6f03 (feat: publish auction)
 }

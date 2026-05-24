@@ -1,20 +1,16 @@
 package controller.navigation;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 // Note: Central helper for full scene changes and inner tab swaps.
 public class SceneManager  {
-    private static StackPane contentArea;
-
     public static void changeScene(ActionEvent event, String fxml) throws IOException {
         // Note: Used by landing/login/register where the whole window changes.
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -24,6 +20,7 @@ public class SceneManager  {
         stage.setScene(scene);
         stage.show();
     }
+<<<<<<< HEAD:src/main/java/controller/navigation/SceneManager.java
 
     public static void setContentArea(StackPane area) {
         contentArea = area;
@@ -38,4 +35,6 @@ public class SceneManager  {
         Parent view = FXMLLoader.load(Objects.requireNonNull(SceneManager.class.getResource(fxml)));
         contentArea.getChildren().setAll(view);
     }
+=======
+>>>>>>> parent of aff6f03 (feat: publish auction):src/main/java/controller/SceneManager.java
 }
