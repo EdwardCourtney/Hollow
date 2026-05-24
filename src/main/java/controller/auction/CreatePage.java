@@ -1,9 +1,10 @@
-package controller;
+package controller.auction;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import controller.navigation.SceneManager;
 import model.response.BaseItemResponse;
 import service.ItemCallback;
 import service.ItemService;

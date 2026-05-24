@@ -1,4 +1,4 @@
-package controller;
+package controller.auction;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -14,9 +14,15 @@ public class Card {
     @FXML private Button viewButton;
 
     private Long itemId;
+    private Runnable viewAction;
 
     public void initialize() {
         viewButton.setDisable(true);
+        viewButton.setOnAction(event -> {
+            if (viewAction != null) {
+                viewAction.run();
+            }
+        });
     }
 
     public void setItem(ItemResponse item) {
@@ -28,6 +34,7 @@ public class Card {
         priceLabel.setText("Price: loading");
         timeLabel.setText("Time: loading");
         infoLabel.setText("Info: loading");
+        viewButton.setDisable(itemId == null);
     }
 
     public void setStatus(String price, String time, String info) {
@@ -35,6 +42,11 @@ public class Card {
         priceLabel.setText("Price: " + price);
         timeLabel.setText("Time: " + time);
         infoLabel.setText("Info: " + info);
+    }
+
+    public void setViewAction(Runnable viewAction) {
+        this.viewAction = viewAction;
+        viewButton.setDisable(itemId == null || viewAction == null);
     }
 
     private String valueOrFallback(String value, String fallback) {

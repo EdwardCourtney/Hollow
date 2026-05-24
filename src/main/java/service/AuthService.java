@@ -30,6 +30,7 @@ public class AuthService {
                     AuthResponse auth = response.body();
                     TokenStorage.accessToken = auth.accessToken;
                     TokenStorage.refreshToken = auth.refreshToken;
+                    TokenStorage.username = username;
                     callback.onSuccess(auth);
                     return;
                 }

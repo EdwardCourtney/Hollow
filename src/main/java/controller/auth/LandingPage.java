@@ -1,7 +1,8 @@
-package controller;
+package controller.auth;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import controller.navigation.SceneManager;
 
 import java.io.IOException;
 

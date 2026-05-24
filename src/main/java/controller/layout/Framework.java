@@ -1,7 +1,8 @@
-package controller;
+package controller.layout;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.StackPane;
+import controller.navigation.SceneManager;
 
 import java.io.IOException;
 

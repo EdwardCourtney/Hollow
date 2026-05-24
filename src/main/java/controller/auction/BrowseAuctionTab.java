@@ -1,4 +1,4 @@
-package controller;
+package controller.auction;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -12,6 +12,7 @@ import model.response.ItemStatusGetResponse;
 import model.response.ItemStatusResponse;
 import model.response.PageResponse;
 import network.ApiClient;
+import controller.navigation.SceneManager;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -109,10 +110,21 @@ public class BrowseAuctionTab {
             VBox card = loader.load();
             Card controller = loader.getController();
             controller.setItem(item);
+            controller.setViewAction(() -> openBidderView(item));
             cardList.getChildren().add(card);
             loadStatus(item.itemId, controller);
         } catch (IOException exception) {
             statusLabel.setText("Cannot load auction card.");
+        }
+    }
+
+    private void openBidderView(ItemResponse item) {
+        try {
+            AuctionViewContext.selectedItem = item;
+            AuctionViewContext.selectedMode = AuctionViewContext.Mode.BIDDER;
+            SceneManager.changeContent("/fxml/bidderViewPage.fxml");
+        } catch (IOException exception) {
+            statusLabel.setText("Cannot open auction view.");
         }
     }
 
