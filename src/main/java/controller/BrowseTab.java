@@ -55,7 +55,10 @@ public class BrowseTab {
 
             @Override
             public void onError(String message) {
-                Platform.runLater(() -> pageLabel.setText(message));
+                Platform.runLater(() -> {
+                    pageLabel.setText("Unable to load items");
+                    AppPopup.error(message);
+                });
             }
         });
     }

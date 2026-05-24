@@ -1,5 +1,6 @@
 package controller.auth;
 
+import controller.AppPopup;
 import controller.SceneManager;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -26,9 +27,9 @@ public class LoginPage {
             @Override
             public void onSuccess(AuthResponse response) {
                 Platform.runLater(() -> {
-                    System.out.println("Login success: " + response.message);
                             try {
                                 SceneManager.changeScene(event, "/fxml/framework.fxml");
+                                AppPopup.info(response.message);
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
@@ -38,9 +39,7 @@ public class LoginPage {
 
             @Override
             public void onError(String message) {
-                Platform.runLater(() -> {
-                    System.out.println(message);
-                });
+                AppPopup.error(message);
             }
         });
     }

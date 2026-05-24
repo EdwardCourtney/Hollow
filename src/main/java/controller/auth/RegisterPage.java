@@ -1,5 +1,6 @@
 package controller.auth;
 
+import controller.AppPopup;
 import controller.SceneManager;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -25,12 +26,12 @@ public class RegisterPage {
         authService.register(username.getText(), displayName.getText(), password.getText(), new RegisterCallBack() {
             @Override
             public void onSuccess(String message) {
-                Platform.runLater(() -> System.out.println("Register success: " + message));
+                AppPopup.info(message);
             }
 
             @Override
             public void onError(String message) {
-                Platform.runLater(() -> System.out.println(message));
+                AppPopup.error(message);
             }
         });
     }

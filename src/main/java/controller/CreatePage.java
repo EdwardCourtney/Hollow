@@ -35,9 +35,9 @@ public class CreatePage {
                     @Override
                     public void onSuccess(BaseItemResponse response) {
                         Platform.runLater(() -> {
-                            System.out.println("Created item: " + response.item.title);
                             try {
                                 SceneManager.changeContent("/fxml/mySaleTab.fxml");
+                                AppPopup.info("Created item: " + response.item.title);
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
@@ -46,9 +46,7 @@ public class CreatePage {
 
                     @Override
                     public void onError(String message) {
-                        Platform.runLater(() -> {
-                            System.out.println(message);
-                        });
+                        AppPopup.error(message);
                     }
                 }
         );

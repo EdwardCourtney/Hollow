@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="controller.BidderViewPage">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="129.5" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="319.0" minHeight="10.0" prefHeight="183.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="220.0" minHeight="10.0" prefHeight="183.5" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Button mnemonicParsing="false" text="Back" />
+         </children>
+      </VBox>
+      <VBox prefHeight="174.0" prefWidth="300.0" GridPane.rowIndex="1">
+         <children>
+            <Label text="A title" />
+            <ImageView fitHeight="150.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="description" text="Description" />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Label text="Auto-Bidding:" />
+            <CheckBox mnemonicParsing="false" text="Enable Auto-Bidding" />
+            <Label text="Auto-Bidding Max Bid:" />
+            <TextField />
+            <Label text="Auto-Bidding Increment:" />
+            <TextField />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+         <children>
+            <Label text="Current price" />
+            <Label text="Highest bidder" />
+            <Label text="Starting price" />
+            <Label text="Bid increment" />
+            <Label text="Start time" />
+            <Label text="End time" />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <Label text="Your last bid:" />
+            <Label text="Your new bid:" />
+            <TextField />
+            <Button mnemonicParsing="false" text="Confirm" />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+         <children>
+            <Button mnemonicParsing="false" text="Add to watchlist" />
+         </children>
+      </VBox>
+   </children>
+</GridPane>

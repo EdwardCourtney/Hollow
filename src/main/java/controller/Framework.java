@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.StackPane;
 
@@ -20,8 +21,8 @@ public class Framework {
     @FXML public void watchlist() throws IOException {
         SceneManager.changeContent("/fxml/watchlistTab.fxml");
     }
-    @FXML public void account(){
-
+    @FXML public void account(ActionEvent event) throws IOException {
+        SceneManager.changeScene(event,"/fxml/accountPage.fxml");
     }
 
     public void initialize() throws IOException {
