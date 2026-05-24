@@ -6,8 +6,8 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Window;
 import javafx.util.Duration;
@@ -43,15 +43,20 @@ public class AppPopup {
 
         try {
             FXMLLoader loader = new FXMLLoader(AppPopup.class.getResource("/fxml/notificationPopup.fxml"));
-            Parent popup = loader.load();
+            Region popup = loader.load();
 
             NotificationPopup controller = loader.getController();
             controller.setMessage(message);
             controller.setType(type);
 
+            popup.setMouseTransparent(true);
+            popup.setMinSize(220, Region.USE_PREF_SIZE);
+            popup.setPrefWidth(300);
+            popup.setMaxSize(320, 80);
+
             StackPane overlayRoot = ensureOverlayRoot(scene);
             StackPane.setAlignment(popup, Pos.BOTTOM_CENTER);
-            StackPane.setMargin(popup, new Insets(0, 0, 20, 0));
+            StackPane.setMargin(popup, new Insets(0, 0, 12, 0));
             overlayRoot.getChildren().add(popup);
 
             FadeTransition fadeIn = new FadeTransition(Duration.millis(120), popup);
@@ -59,7 +64,7 @@ public class AppPopup {
             fadeIn.setToValue(1);
             fadeIn.play();
 
-            PauseTransition delay = new PauseTransition(Duration.seconds(2.4));
+            PauseTransition delay = new PauseTransition(Duration.seconds(1.8));
             delay.setOnFinished(event -> {
                 FadeTransition fadeOut = new FadeTransition(Duration.millis(220), popup);
                 fadeOut.setFromValue(1);
@@ -90,13 +95,14 @@ public class AppPopup {
     }
 
     private static StackPane ensureOverlayRoot(Scene scene) {
-        Parent root = scene.getRoot();
+        javafx.scene.Parent root = scene.getRoot();
         if (root instanceof StackPane stackPane && "appOverlayRoot".equals(stackPane.getId())) {
             return stackPane;
         }
 
         StackPane overlayRoot = new StackPane();
         overlayRoot.setId("appOverlayRoot");
+        overlayRoot.setPickOnBounds(false);
         overlayRoot.getChildren().add(root);
         scene.setRoot(overlayRoot);
         return overlayRoot;

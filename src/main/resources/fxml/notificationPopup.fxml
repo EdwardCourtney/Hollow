@@ -4,19 +4,23 @@
 <?import javafx.scene.layout.HBox?>
 
 <HBox fx:id="container"
-      alignment="CENTER"
-      maxWidth="420.0"
-      minHeight="42.0"
+      alignment="CENTER_LEFT"
+      maxHeight="80.0"
+      maxWidth="320.0"
+      minHeight="30.0"
+      minWidth="220.0"
       opacity="0.0"
-      prefHeight="42.0"
-      spacing="8.0"
+      prefHeight="32.0"
+      prefWidth="300.0"
+      spacing="6.0"
       xmlns="http://javafx.com/javafx/25"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="controller.NotificationPopup">
    <children>
       <Label fx:id="messageLabel"
-             maxWidth="380.0"
-             style="-fx-text-fill: white; -fx-font-size: 13px;"
+             maxHeight="54.0"
+             maxWidth="278.0"
+             style="-fx-text-fill: white; -fx-font-size: 12px;"
              text="Notification"
              wrapText="true" />
    </children>

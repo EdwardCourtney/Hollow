@@ -17,7 +17,8 @@ public class SceneManager  {
     public static void changeScene(ActionEvent event, String fxml) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(SceneManager.class.getResource(fxml));
-        Scene scene = new Scene(loader.load());
+        Scene currentScene = stage.getScene();
+        Scene scene = new Scene(loader.load(), currentScene.getWidth(), currentScene.getHeight());
 
         stage.setScene(scene);
         stage.show();

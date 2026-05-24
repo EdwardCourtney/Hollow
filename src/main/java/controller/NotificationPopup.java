@@ -23,7 +23,7 @@ public class NotificationPopup {
     private String baseStyle(String color) {
         return "-fx-background-color: " + color + ";"
                 + "-fx-background-radius: 6;"
-                + "-fx-padding: 10 14;"
-                + "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.26), 12, 0.2, 0, 3);";
+                + "-fx-padding: 6 10;"
+                + "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.22), 8, 0.18, 0, 2);";
     }
 }
