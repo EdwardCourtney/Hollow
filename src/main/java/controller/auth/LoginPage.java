@@ -7,7 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import model.response.AuthResponse;
+import dto.response.AuthResponse;
 import service.auth.LoginCallback;
 import service.auth.AuthService;
 

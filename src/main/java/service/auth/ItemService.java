@@ -1,10 +1,10 @@
 package service.auth;
 
-import model.request.PublishItemRequest;
-import model.response.BaseItemResponse;
-import model.response.GetItemPageResponse;
+import dto.request.PublishItemRequest;
+import dto.response.BaseItemResponse;
+import dto.response.GetItemPageResponse;
 import network.ApiClient;
-import network.TokenStorage;
+import model.TokenStorage;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -1,6 +1,6 @@
 package service.auth;
 
-import model.response.GetItemPageResponse;
+import dto.response.GetItemPageResponse;
 
 public interface ItemPageCallback {
     void onSuccess(GetItemPageResponse response);

@@ -1,4 +1,4 @@
-package model.request;
+package dto.request;
 
 public class RegisterRequest {
     public String username;

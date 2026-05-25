@@ -1,6 +1,6 @@
 package service.auth;
 
-import model.response.BaseItemResponse;
+import dto.response.BaseItemResponse;
 
 public interface ItemCallback {
     void onSuccess(BaseItemResponse response);

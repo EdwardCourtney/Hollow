@@ -41,7 +41,7 @@
             style="-fx-background-color: white; -fx-border-color: transparent transparent #e1e4e8 transparent; -fx-padding: 0 22;"
             BorderPane.alignment="CENTER">
          <children>
-            <Label text="Your balance: 0.0"
+            <Label fx:id="balanceLabel" text="Your balance: 0.00"
                    style="-fx-text-fill: #4b5563; -fx-font-size: 13px;" />
             <Button mnemonicParsing="false" onAction="#account" text="Account"
                     style="-fx-background-color: #1f6f43; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 8 14;" />

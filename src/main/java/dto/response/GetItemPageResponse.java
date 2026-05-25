@@ -1,4 +1,4 @@
-package model.response;
+package dto.response;
 
 import java.util.List;
 

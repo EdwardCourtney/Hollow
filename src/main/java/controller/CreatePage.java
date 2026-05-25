@@ -4,7 +4,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import model.response.BaseItemResponse;
+import dto.response.BaseItemResponse;
 import service.auth.ItemCallback;
 import service.auth.ItemService;
 

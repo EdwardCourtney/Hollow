@@ -1,4 +1,4 @@
-package model.request;
+package dto.request;
 
 public class LoginRequest {
     public String username;

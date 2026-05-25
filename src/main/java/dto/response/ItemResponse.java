@@ -1,4 +1,4 @@
-package model.response;
+package dto.response;
 
 public class ItemResponse {
     public Long itemId;

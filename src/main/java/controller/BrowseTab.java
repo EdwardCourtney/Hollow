@@ -7,8 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
-import model.response.GetItemPageResponse;
-import model.response.ItemResponse;
+import dto.response.GetItemPageResponse;
+import dto.response.ItemResponse;
 import service.auth.ItemPageCallback;
 import service.auth.ItemService;
 

@@ -1,4 +1,4 @@
-package network;
+package model;
 
 public class TokenStorage {
     public static String accessToken;

@@ -1,6 +1,6 @@
 package service.auth;
 
-import model.response.AuthResponse;
+import dto.response.AuthResponse;
 
 public interface LoginCallback {
     void onSuccess(AuthResponse response);

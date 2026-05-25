@@ -6,8 +6,8 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Window;
 import javafx.util.Duration;
@@ -43,18 +43,14 @@ public class AppPopup {
 
         try {
             FXMLLoader loader = new FXMLLoader(AppPopup.class.getResource("/fxml/notificationPopup.fxml"));
-            Region popup = loader.load();
+            Parent popup = loader.load();
 
             NotificationPopup controller = loader.getController();
             controller.setMessage(message);
             controller.setType(type);
 
-            popup.setMouseTransparent(true);
-            popup.setMinSize(220, Region.USE_PREF_SIZE);
-            popup.setPrefWidth(300);
-            popup.setMaxSize(320, 80);
-
             StackPane overlayRoot = ensureOverlayRoot(scene);
+            popup.setMouseTransparent(true);
             StackPane.setAlignment(popup, Pos.BOTTOM_CENTER);
             StackPane.setMargin(popup, new Insets(0, 0, 12, 0));
             overlayRoot.getChildren().add(popup);
@@ -95,7 +91,7 @@ public class AppPopup {
     }
 
     private static StackPane ensureOverlayRoot(Scene scene) {
-        javafx.scene.Parent root = scene.getRoot();
+        Parent root = scene.getRoot();
         if (root instanceof StackPane stackPane && "appOverlayRoot".equals(stackPane.getId())) {
             return stackPane;
         }

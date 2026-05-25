@@ -1,12 +1,22 @@
 package controller;
 
+import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
+import model.AccountSession;
+import dto.response.BalanceResponse;
+import service.account.AccountService;
+import service.account.BalanceCallback;
 
 import java.io.IOException;
 
 public class Framework {
     @FXML private StackPane contentArea;
+    @FXML private Label balanceLabel;
+
+    private final AccountService accountService = new AccountService();
 
     @FXML public void dashboard() throws IOException {
         SceneManager.changeContent("/fxml/dashboardTab.fxml");
@@ -26,6 +36,23 @@ public class Framework {
 
     public void initialize() throws IOException {
         SceneManager.setContentArea(contentArea);
+        balanceLabel.textProperty().bind(Bindings.format("Your balance: %.2f", AccountSession.balanceProperty()));
         SceneManager.changeContent("/fxml/dashboardTab.fxml");
+        refreshBalance();
     }
+
+    private void refreshBalance() {
+        accountService.getBalance(new BalanceCallback() {
+            @Override
+            public void onSuccess(BalanceResponse response) {
+                Platform.runLater(() -> AccountSession.setBalance(response.balance));
+            }
+
+            @Override
+            public void onError(String message) {
+                AppPopup.error(message);
+            }
+        });
+    }
+
 }

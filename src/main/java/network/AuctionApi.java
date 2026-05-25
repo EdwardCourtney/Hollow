@@ -1,9 +1,10 @@
 package network;
 
-import model.request.LoginRequest;
-import model.request.PublishItemRequest;
-import model.request.RegisterRequest;
-import model.response.*;
+import dto.request.DepositRequest;
+import dto.request.LoginRequest;
+import dto.request.PublishItemRequest;
+import dto.request.RegisterRequest;
+import dto.response.*;
 import retrofit2.Call;
 import retrofit2.http.*;
 
@@ -26,4 +27,13 @@ public interface AuctionApi {
 
     @GET("/item/status/{itemId}")
     Call<ItemStatusResponse> getItemStatus(@Path("itemId") Long itemId);
+
+    @GET("/users/me/balance")
+    Call<BalanceResponse> getBalance(@Header("Authorization") String authorization);
+
+    @POST("/users/me/deposit")
+    Call<BalanceResponse> deposit(
+            @Header("Authorization") String authorization,
+            @Body DepositRequest request
+    );
 }

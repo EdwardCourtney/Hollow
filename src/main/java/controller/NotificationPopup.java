@@ -13,17 +13,7 @@ public class NotificationPopup {
     }
 
     public void setType(String type) {
-        switch (type) {
-            case "error" -> container.setStyle(baseStyle("#b42318"));
-            case "warning" -> container.setStyle(baseStyle("#a15c00"));
-            default -> container.setStyle(baseStyle("#1f6f43"));
-        }
-    }
-
-    private String baseStyle(String color) {
-        return "-fx-background-color: " + color + ";"
-                + "-fx-background-radius: 6;"
-                + "-fx-padding: 6 10;"
-                + "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.22), 8, 0.18, 0, 2);";
+        container.getStyleClass().removeAll("popup-info", "popup-error", "popup-warning");
+        container.getStyleClass().add("popup-" + type);
     }
 }

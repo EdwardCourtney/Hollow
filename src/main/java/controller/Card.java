@@ -2,7 +2,7 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import model.response.ItemResponse;
+import dto.response.ItemResponse;
 
 public class Card {
     @FXML private Label itemLabel;
