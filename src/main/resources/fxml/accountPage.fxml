@@ -11,7 +11,7 @@
       style="-fx-background-color: transparent;"
       xmlns="http://javafx.com/javafx/25"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controller.AccountPage">
+      fx:controller="controller.account.AccountPage">
    <children>
       <HBox alignment="CENTER_LEFT" spacing="12.0">
          <children>

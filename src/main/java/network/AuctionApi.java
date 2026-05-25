@@ -1,11 +1,17 @@
 package network;
 
-import dto.request.BidPostRequest;
-import dto.request.DepositRequest;
-import dto.request.LoginRequest;
-import dto.request.PublishItemRequest;
-import dto.request.RegisterRequest;
-import dto.response.*;
+import dto.auction.BidPostRequest;
+import dto.auction.BaseItemResponse;
+import dto.auction.BidPostResponse;
+import dto.auction.GetItemPageResponse;
+import dto.auction.ItemStatusResponse;
+import dto.account.DepositRequest;
+import dto.account.BalanceResponse;
+import dto.auth.AuthResponse;
+import dto.auth.LoginRequest;
+import dto.auction.PublishItemRequest;
+import dto.auth.RegisterRequest;
+import dto.common.BaseResponse;
 import retrofit2.Call;
 import retrofit2.http.*;
 

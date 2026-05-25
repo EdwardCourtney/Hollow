@@ -1,6 +1,6 @@
 package service.account;
 
-import dto.response.BalanceResponse;
+import dto.account.BalanceResponse;
 
 public interface BalanceCallback {
     void onSuccess(BalanceResponse response);

@@ -1,8 +1,7 @@
 package controller.auth;
 
-import controller.AppPopup;
-import controller.SceneManager;
-import javafx.application.Platform;
+import controller.app.AppPopup;
+import controller.app.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -20,7 +19,7 @@ public class RegisterPage {
     private final AuthService authService = new AuthService();
 
     @FXML public void back(ActionEvent event) throws IOException {
-        SceneManager.changeScene(event, "/fxml/auth/landingPage.fxml");
+        SceneManager.changeScene(event, "/fxml/landingPage.fxml");
     }
     @FXML public void submit(){
         authService.register(username.getText(), displayName.getText(), password.getText(), new RegisterCallBack() {

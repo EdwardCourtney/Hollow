@@ -1,7 +1,7 @@
 package service.account;
 
-import dto.request.DepositRequest;
-import dto.response.BalanceResponse;
+import dto.account.DepositRequest;
+import dto.account.BalanceResponse;
 import network.ApiClient;
 import model.TokenStorage;
 import retrofit2.Call;

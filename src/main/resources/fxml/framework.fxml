@@ -13,7 +13,7 @@
             style="-fx-background-color: #f6f7f9;"
             xmlns="http://javafx.com/javafx/25"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.Framework">
+            fx:controller="controller.app.Framework">
    <left>
       <VBox prefWidth="180.0"
             spacing="8.0"

@@ -1,9 +1,9 @@
 package service.auth;
 
-import dto.request.LoginRequest;
-import dto.request.RegisterRequest;
-import dto.response.AuthResponse;
-import dto.response.BaseResponse;
+import dto.auth.LoginRequest;
+import dto.auth.RegisterRequest;
+import dto.auth.AuthResponse;
+import dto.common.BaseResponse;
 import network.ApiClient;
 import model.TokenStorage;
 import retrofit2.Call;

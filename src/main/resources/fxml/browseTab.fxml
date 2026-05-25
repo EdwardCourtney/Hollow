@@ -13,7 +13,7 @@
             style="-fx-background-color: transparent;"
             xmlns="http://javafx.com/javafx/25"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.BrowseTab">
+            fx:controller="controller.auction.BrowseTab">
    <top>
       <VBox spacing="12.0" BorderPane.alignment="CENTER">
          <children>

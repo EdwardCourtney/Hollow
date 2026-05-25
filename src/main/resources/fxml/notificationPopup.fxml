@@ -17,7 +17,7 @@
       stylesheets="@../css/notificationPopup.css"
       xmlns="http://javafx.com/javafx/25"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controller.NotificationPopup">
+      fx:controller="controller.app.NotificationPopup">
    <children>
       <Label fx:id="messageLabel"
              maxWidth="238.0"

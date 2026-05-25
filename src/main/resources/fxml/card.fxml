@@ -12,7 +12,7 @@
       style="-fx-background-color: white; -fx-background-radius: 7; -fx-border-color: #e5e7eb; -fx-border-radius: 7; -fx-padding: 10;"
       xmlns="http://javafx.com/javafx/25"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controller.Card">
+      fx:controller="controller.auction.Card">
    <children>
       <ImageView fitHeight="86.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="false"
                  style="-fx-background-color: #eef0f3;" />
