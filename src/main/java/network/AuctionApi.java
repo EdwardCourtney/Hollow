@@ -1,5 +1,6 @@
 package network;
 
+import dto.request.BidPostRequest;
 import dto.request.DepositRequest;
 import dto.request.LoginRequest;
 import dto.request.PublishItemRequest;
@@ -35,5 +36,11 @@ public interface AuctionApi {
     Call<BalanceResponse> deposit(
             @Header("Authorization") String authorization,
             @Body DepositRequest request
+    );
+
+    @POST("/bid")
+    Call<BidPostResponse> placeBid(
+            @Header("Authorization") String authorization,
+            @Body BidPostRequest request
     );
 }

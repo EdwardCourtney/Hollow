@@ -34,6 +34,14 @@ public class SceneManager  {
         }
 
         Parent view = FXMLLoader.load(Objects.requireNonNull(SceneManager.class.getResource(fxml)));
+        changeContent(view);
+    }
+
+    public static void changeContent(Parent view) {
+        if (contentArea == null) {
+            throw new IllegalStateException("Content area has not been initialized");
+        }
+
         contentArea.getChildren().setAll(view);
     }
 }

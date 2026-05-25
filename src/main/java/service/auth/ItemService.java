@@ -3,6 +3,7 @@ package service.auth;
 import dto.request.PublishItemRequest;
 import dto.response.BaseItemResponse;
 import dto.response.GetItemPageResponse;
+import dto.response.ItemStatusResponse;
 import network.ApiClient;
 import model.TokenStorage;
 import retrofit2.Call;
@@ -103,6 +104,30 @@ public class ItemService {
 
             @Override
             public void onFailure(Call<GetItemPageResponse> call, Throwable throwable) {
+                callback.onError("Network error: " + throwable.getMessage());
+            }
+        });
+    }
+
+    public void getItemStatus(Long itemId, ItemStatusCallback callback) {
+        if (itemId == null) {
+            callback.onError("Missing item id");
+            return;
+        }
+
+        ApiClient.api.getItemStatus(itemId).enqueue(new Callback<ItemStatusResponse>() {
+            @Override
+            public void onResponse(Call<ItemStatusResponse> call, Response<ItemStatusResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    callback.onSuccess(response.body());
+                    return;
+                }
+
+                callback.onError("Get item status failed. HTTP code: " + response.code());
+            }
+
+            @Override
+            public void onFailure(Call<ItemStatusResponse> call, Throwable throwable) {
                 callback.onError("Network error: " + throwable.getMessage());
             }
         });

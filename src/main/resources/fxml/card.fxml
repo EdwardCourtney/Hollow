@@ -28,7 +28,7 @@
              wrapText="true"
              style="-fx-text-fill: #4b5563;" />
       <Region VBox.vgrow="ALWAYS" />
-      <Button maxWidth="Infinity" mnemonicParsing="false" prefHeight="32.0" text="See details"
+      <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#seeDetails" prefHeight="32.0" text="See details"
               style="-fx-background-color: #20242c; -fx-text-fill: white; -fx-background-radius: 5;" />
    </children>
 </VBox>
