@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LandingPage">
+<StackPane prefHeight="620.0" prefWidth="980.0"
+           style="-fx-background-color: #f6f7f9;"
+           xmlns="http://javafx.com/javafx/25"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="controller.auth.LandingPage">
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Ponzi Auction" />
-      <Button mnemonicParsing="false" onAction="#login" text="Login" />
-      <Button mnemonicParsing="false" onAction="#register" text="Register" />
+      <VBox alignment="CENTER_LEFT"
+            maxWidth="360.0"
+            spacing="14.0"
+            style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #e5e7eb; -fx-border-radius: 8; -fx-padding: 28;">
+         <children>
+            <Label text="Ponzi Auction"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #111827;" />
+            <Label text="Sign in or create an account to start managing auctions."
+                   wrapText="true"
+                   style="-fx-text-fill: #4b5563; -fx-font-size: 13px;" />
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#login" text="Login"
+                    style="-fx-background-color: #1f6f43; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10 14;" />
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#register" text="Register"
+                    style="-fx-background-radius: 5; -fx-padding: 10 14;" />
+         </children>
+         <padding>
+            <Insets bottom="0.0" left="0.0" right="0.0" top="0.0" />
+         </padding>
+      </VBox>
    </children>
-</VBox>
+</StackPane>

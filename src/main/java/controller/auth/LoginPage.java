@@ -1,18 +1,18 @@
 package controller.auth;
 
+import controller.app.AppPopup;
+import controller.app.SceneManager;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import controller.navigation.SceneManager;
-import model.response.AuthResponse;
-import service.AuthCallback;
-import service.AuthService;
+import dto.auth.AuthResponse;
+import service.auth.LoginCallback;
+import service.auth.AuthService;
 
 import java.io.IOException;
 
-// Note: Handles login and opens the main app after success.
 public class LoginPage {
     @FXML private TextField username;
     @FXML private PasswordField password;
@@ -23,14 +23,13 @@ public class LoginPage {
         SceneManager.changeScene(event, "/fxml/landingPage.fxml");
     }
     @FXML public void submit(ActionEvent event){
-        // Note: Auth runs async; JavaFX UI changes stay on the UI thread.
-        authService.login(username.getText(), password.getText(), new AuthCallback() {
+        authService.login(username.getText(), password.getText(), new LoginCallback() {
             @Override
             public void onSuccess(AuthResponse response) {
                 Platform.runLater(() -> {
-                    System.out.println("Login success: " + response.message);
                             try {
                                 SceneManager.changeScene(event, "/fxml/framework.fxml");
+                                AppPopup.info(response.message);
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
@@ -40,9 +39,7 @@ public class LoginPage {
 
             @Override
             public void onError(String message) {
-                Platform.runLater(() -> {
-                    System.out.println(message);
-                });
+                AppPopup.error(message);
             }
         });
     }

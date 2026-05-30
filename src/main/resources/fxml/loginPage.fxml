@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginPage">
+<StackPane prefHeight="620.0" prefWidth="980.0"
+           style="-fx-background-color: #f6f7f9;"
+           xmlns="http://javafx.com/javafx/25"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="controller.auth.LoginPage">
    <children>
-      <Button mnemonicParsing="false" onAction="#back" text="Back" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-      <TextField fx:id="username" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-      <PasswordField fx:id="password" />
-      <Button mnemonicParsing="false" onAction="#submit" text="Submit" />
+      <VBox maxWidth="360.0"
+            spacing="10.0"
+            style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #e5e7eb; -fx-border-radius: 8; -fx-padding: 26;">
+         <children>
+            <Label text="Login"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #111827;" />
+            <Label text="Username" style="-fx-text-fill: #4b5563;" />
+            <TextField fx:id="username" promptText="Enter username"
+                       style="-fx-background-radius: 5; -fx-padding: 9 11;" />
+            <Label text="Password" style="-fx-text-fill: #4b5563;" />
+            <PasswordField fx:id="password" promptText="Enter password"
+                           style="-fx-background-radius: 5; -fx-padding: 9 11;" />
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#submit" text="Submit"
+                    style="-fx-background-color: #1f6f43; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10 14;" />
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#back" text="Back"
+                    style="-fx-background-color: transparent; -fx-text-fill: #4b5563;" />
+         </children>
+      </VBox>
    </children>
-</VBox>
+</StackPane>

@@ -1,17 +1,16 @@
 package controller.auth;
 
-import javafx.application.Platform;
+import controller.app.AppPopup;
+import controller.app.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import controller.navigation.SceneManager;
-import service.AuthMessageCallBack;
-import service.AuthService;
+import service.auth.RegisterCallBack;
+import service.auth.AuthService;
 
 import java.io.IOException;
 
-// Note: Handles account creation from the register form.
 public class RegisterPage {
     @FXML private TextField username;
     @FXML private TextField displayName;
@@ -23,16 +22,15 @@ public class RegisterPage {
         SceneManager.changeScene(event, "/fxml/landingPage.fxml");
     }
     @FXML public void submit(){
-        // Note: Registration result is logged for now; no in-app message view yet.
-        authService.register(username.getText(), displayName.getText(), password.getText(), new AuthMessageCallBack() {
+        authService.register(username.getText(), displayName.getText(), password.getText(), new RegisterCallBack() {
             @Override
             public void onSuccess(String message) {
-                Platform.runLater(() -> System.out.println("Register success: " + message));
+                AppPopup.info(message);
             }
 
             @Override
             public void onError(String message) {
-                Platform.runLater(() -> System.out.println(message));
+                AppPopup.error(message);
             }
         });
     }

@@ -1,0 +1,23 @@
+.notification-popup {
+    -fx-background-color: #1f6f43;
+    -fx-background-radius: 6;
+    -fx-padding: 5 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.20), 7, 0.16, 0, 2);
+}
+
+.notification-message {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+
+.popup-info {
+    -fx-background-color: #1f6f43;
+}
+
+.popup-error {
+    -fx-background-color: #b42318;
+}
+
+.popup-warning {
+    -fx-background-color: #a15c00;
+}

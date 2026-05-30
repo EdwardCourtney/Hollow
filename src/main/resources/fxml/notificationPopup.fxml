@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:id="container"
+      alignment="CENTER_LEFT"
+      maxHeight="28.0"
+      maxWidth="280.0"
+      minHeight="28.0"
+      minWidth="180.0"
+      opacity="0.0"
+      prefHeight="28.0"
+      prefWidth="260.0"
+      spacing="6.0"
+      styleClass="notification-popup"
+      stylesheets="@../css/notificationPopup.css"
+      xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.app.NotificationPopup">
+   <children>
+      <Label fx:id="messageLabel"
+             maxWidth="238.0"
+             minHeight="16.0"
+             prefHeight="16.0"
+             styleClass="notification-message"
+             text="Notification"
+             textOverrun="ELLIPSIS"
+             wrapText="false" />
+   </children>
+</HBox>

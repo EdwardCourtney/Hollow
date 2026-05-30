@@ -1,29 +1,19 @@
 package network;
 
-import model.request.LoginRequest;
-<<<<<<< HEAD
-import model.request.BidPostRequest;
-import model.request.PublishItemRequest;
-=======
->>>>>>> parent of aff6f03 (feat: publish auction)
-import model.request.RegisterRequest;
-import model.response.AuthResponse;
-import model.response.BaseResponse;
-import model.response.BidPageResponse;
-import model.response.BidPostResponse;
-import model.response.GetItemPagesResponse;
-import model.response.ItemPageObjectResponse;
-import model.response.ItemStatusGetResponse;
+import dto.auction.BidPostRequest;
+import dto.auction.BaseItemResponse;
+import dto.auction.BidPostResponse;
+import dto.auction.GetItemPageResponse;
+import dto.auction.ItemStatusResponse;
+import dto.account.DepositRequest;
+import dto.account.BalanceResponse;
+import dto.auth.AuthResponse;
+import dto.auth.LoginRequest;
+import dto.auction.PublishItemRequest;
+import dto.auth.RegisterRequest;
+import dto.common.BaseResponse;
 import retrofit2.Call;
-import retrofit2.http.Body;
-<<<<<<< HEAD
-import retrofit2.http.GET;
-import retrofit2.http.Header;
-import retrofit2.http.Path;
-=======
->>>>>>> parent of aff6f03 (feat: publish auction)
-import retrofit2.http.POST;
-import retrofit2.http.Query;
+import retrofit2.http.*;
 
 public interface AuctionApi {
     @POST("/login")
@@ -31,7 +21,6 @@ public interface AuctionApi {
 
     @POST("/register")
     Call<BaseResponse> register(@Body RegisterRequest request);
-<<<<<<< HEAD
 
     @POST("/items")
     Call<BaseItemResponse> createItem(
@@ -40,43 +29,24 @@ public interface AuctionApi {
     );
 
     @GET("/items")
-    Call<GetItemPagesResponse> getActiveItems(
-            @Query("page") int page,
-            @Query("size") int size
-    );
-
-    @GET("/items/{itemId}")
-    Call<BaseItemResponse> getItem(@Path("itemId") Long itemId);
-
-    @GET("/items/listings/{username}")
-    Call<ItemPageObjectResponse> getListings(
-            @Path("username") String username,
-            @Query("page") int page,
-            @Query("size") int size
-    );
-
-    @POST("/items/cancel/{itemId}")
-    Call<BaseResponse> cancelItem(
-            @Header("Authorization") String authorization,
-            @Path("itemId") Long itemId
-    );
+    Call<GetItemPageResponse> getItems(@Query("page") int page,
+                                       @Query("size") int size);
 
     @GET("/item/status/{itemId}")
-    Call<ItemStatusGetResponse> getItemStatus(@Path("itemId") Long itemId);
+    Call<ItemStatusResponse> getItemStatus(@Path("itemId") Long itemId);
+
+    @GET("/users/me/balance")
+    Call<BalanceResponse> getBalance(@Header("Authorization") String authorization);
+
+    @POST("/users/me/deposit")
+    Call<BalanceResponse> deposit(
+            @Header("Authorization") String authorization,
+            @Body DepositRequest request
+    );
 
     @POST("/bid")
-    Call<BidPostResponse> makeBid(
+    Call<BidPostResponse> placeBid(
             @Header("Authorization") String authorization,
             @Body BidPostRequest request
     );
-
-    @GET("/bids/{itemId}/bids")
-    Call<BidPageResponse> getItemBids(
-            @Header("Authorization") String authorization,
-            @Path("itemId") Long itemId,
-            @Query("page") int page,
-            @Query("size") int size
-    );
-=======
->>>>>>> parent of aff6f03 (feat: publish auction)
 }
