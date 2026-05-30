@@ -3,9 +3,11 @@ package controller.auth;
 import controller.app.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import controller.navigation.SceneManager;
 
 import java.io.IOException;
 
+// Note: First screen; routes users to login or register.
 public class LandingPage {
     @FXML public void login(ActionEvent event) throws IOException {
         SceneManager.changeScene(event, "/fxml/loginPage.fxml");
