@@ -1,4 +1,4 @@
-# Ứng dụng Đấu giá Trực tuyến (Hollow)
+# Ứng dụng Đấu giá Trực tuyến (PONZI AUTCIONS)
 
 ![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![JavaFX](https://img.shields.io/badge/JavaFX-21.0.2-blue?style=for-the-badge&logo=openjfx&logoColor=white)
@@ -79,9 +79,5 @@ Hệ thống hoạt động theo mô hình Server-Client. **Bạn cần phải k
 *   [x] **Quản lý vật phẩm đã đăng (My Sale):** Xem danh sách và theo dõi trạng thái các vật phẩm mình đang bán.
 *   [x] **Xem chi tiết với vai trò người bán (Seller View):** Xem tiến độ đấu giá của vật phẩm mình đăng kèm biểu đồ (LineChart) lịch sử đặt giá.
 
-## 6. Liên kết đính kèm
-*   **Báo cáo PDF:** [Link Google Drive báo cáo PDF](#) *(Vui lòng cập nhật link)*
-*   **Video Demo:** [Link Google Drive video demo](#) *(Vui lòng cập nhật link)*
-
-## 7. Sơ đồ lớp (UML Diagram)
+## 6. Sơ đồ lớp (UML Diagram)
 Sơ đồ lớp chi tiết của hệ thống được lưu trữ trong file `project_diagram.puml`. Bạn có thể xem hoặc kết xuất (render) sơ đồ này bằng công cụ [PlantUML](https://plantuml.com/).
