@@ -8,10 +8,14 @@ public class ApiClient {
     private static final String DEFAULT_BASE_URL = "http://localhost:8080/";
     public static final String BASE_URL = normalizeBaseUrl(resolveBaseUrl());
 
+    private static final FailureLoggingInterceptor FAILURE_LOGGER = new FailureLoggingInterceptor();
+
     private static final OkHttpClient PUBLIC_CLIENT = new OkHttpClient.Builder()
+            .addInterceptor(FAILURE_LOGGER)
             .build();
 
     private static final OkHttpClient AUTHENTICATED_CLIENT = new OkHttpClient.Builder()
+            .addInterceptor(FAILURE_LOGGER)
             .addInterceptor(new AuthInterceptor())
             .build();
 
@@ -30,7 +34,7 @@ public class ApiClient {
     }
 
     private static String resolveBaseUrl() {
-        String propertyValue = System.getProperty("auction.apiBaseUrl");
+        String propertyValue = System.getenv("AUCTION_URL");
         if (propertyValue != null && !propertyValue.isBlank()) {
             return propertyValue;
         }
