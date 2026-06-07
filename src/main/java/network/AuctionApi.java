@@ -34,6 +34,7 @@ public interface AuctionApi {
     Call<BaseResponse> register(@Body RegisterRequest request);
 
     @POST("/refresh")
+    @Headers("accept: */*")
     Call<AuthResponse> refresh(@Body RefreshTokenRequest request);
 
     @POST("/logout")
