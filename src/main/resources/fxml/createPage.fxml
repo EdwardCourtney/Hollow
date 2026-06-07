@@ -15,7 +15,7 @@
 <VBox prefHeight="560.0" prefWidth="760.0"
       spacing="14.0"
       style="-fx-background-color: transparent;"
-      xmlns="http://javafx.com/javafx/25"
+      xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="controller.auction.CreatePage">
    <children>

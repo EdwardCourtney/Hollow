@@ -17,7 +17,7 @@
       prefWidth="980.0"
       spacing="16.0"
       style="-fx-background-color: #f6f7f9; -fx-padding: 28;"
-      xmlns="http://javafx.com/javafx/25"
+      xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="controller.admin.AdminPage">
    <children>

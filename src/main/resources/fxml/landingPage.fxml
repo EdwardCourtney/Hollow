@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane prefHeight="620.0" prefWidth="980.0" style="-fx-background-color: linear-gradient(to bottom right, #10251b, #f4efe4);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.auth.LandingPage">
+<StackPane prefHeight="620.0" prefWidth="980.0" style="-fx-background-color: linear-gradient(to bottom right, #10251b, #f4efe4);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.auth.LandingPage">
    <children>
       <HBox alignment="CENTER" maxHeight="430.0" maxWidth="780.0" spacing="0.0" style="-fx-background-color: white; -fx-background-radius: 24; -fx-effect: dropshadow(gaussian, rgba(17,24,39,0.22), 28, 0.2, 0, 12);">
          <children>
